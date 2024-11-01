@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">dz_7</string>
+    <string name="search">Search</string>
+    <string name="hint_brand">Brand</string>
+    <string name="hint_model">Model</string>
+    <string name="prompt_year_from">Year from</string>
+    <string name="prompt_year_to">Year to</string>
+    <string name="hint_price_from">Price from</string>
+    <string name="hint_price_to">Price to</string>
+    <string name="car_image_desc">Car image</string>
+</resources>

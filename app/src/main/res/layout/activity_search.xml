@@ -1,0 +1,81 @@
+<!-- res/layout/activity_search.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Поле вибору бренду -->
+    <AutoCompleteTextView
+        android:id="@+id/brandInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_brand"
+        android:inputType="text"/>
+
+    <!-- Поле вибору моделі -->
+    <AutoCompleteTextView
+        android:id="@+id/modelInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_model"
+        android:inputType="text"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Вибір року від і до -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <Spinner
+            android:id="@+id/yearFromSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:prompt="@string/prompt_year_from"/>
+
+        <Spinner
+            android:id="@+id/yearToSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:prompt="@string/prompt_year_to"/>
+    </LinearLayout>
+
+    <!-- Введення діапазону ціни -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <EditText
+            android:id="@+id/priceFromInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/hint_price_from"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/priceToInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:hint="@string/hint_price_to"
+            android:inputType="number"/>
+    </LinearLayout>
+
+    <!-- Кнопка для виконання пошуку -->
+    <Button
+        android:id="@+id/matchesButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search"
+        android:layout_marginTop="16dp"
+        android:enabled="false"/> <!-- Кнопка стає активною, коли є збіги -->
+</LinearLayout>
