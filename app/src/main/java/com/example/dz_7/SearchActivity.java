@@ -26,7 +26,7 @@ public class SearchActivity extends AppCompatActivity {
     private EditText priceFromInput, priceToInput;
     private Button matchesButton;
     private List<Car> carList = new ArrayList<>();
-    private List<Car> filteredCars = new ArrayList<>();  // Для сохранения отфильтрованных автомобилей
+    private List<Car> filteredCars = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,20 +41,16 @@ public class SearchActivity extends AppCompatActivity {
         priceToInput = findViewById(R.id.priceToInput);
         matchesButton = findViewById(R.id.matchesButton);
 
-        // Инициализация списка автомобилей
         initCarList();
         setupAutocompleteFields();
         setupYearSpinners();
-
-        // Добавляем наблюдателей для обновления фильтрации при изменении ввода
         setupSearchListeners();
 
         matchesButton.setOnClickListener(v -> returnSearchResults());
     }
 
     private void initCarList() {
-        // Получаем список автомобилей (например, из Singleton или Intent)
-        carList = CarRepository.getInstance().getCarList();  // Пример получения через Singleton
+        carList = CarRepository.getInstance().getCarList();
     }
 
     private void setupAutocompleteFields() {
@@ -88,7 +84,7 @@ public class SearchActivity extends AppCompatActivity {
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                searchCars();  // Обновляем поиск при изменении
+                searchCars();
             }
             @Override
             public void afterTextChanged(Editable s) {}
@@ -120,13 +116,19 @@ public class SearchActivity extends AppCompatActivity {
             filteredCars.add(car);
         }
 
-        // Делаем кнопку кликабельной, если есть совпадения
-        matchesButton.setEnabled(!filteredCars.isEmpty());
+        // Обновляем кнопку с количеством совпадений
+        if (!filteredCars.isEmpty()) {
+            matchesButton.setEnabled(true);
+            matchesButton.setText(getString(R.string.matches_found, filteredCars.size()));
+        } else {
+            matchesButton.setEnabled(false);
+            matchesButton.setText(R.string.no_matches);
+        }
     }
 
     private void returnSearchResults() {
         Intent intent = new Intent();
-        intent.putParcelableArrayListExtra("filteredCars", new ArrayList<>(filteredCars)); // Now compatible
+        intent.putParcelableArrayListExtra("filteredCars", new ArrayList<>(filteredCars));
         setResult(RESULT_OK, intent);
         finish();
     }

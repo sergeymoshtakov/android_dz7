@@ -1,11 +1,10 @@
-<!-- res/layout/activity_search.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <!-- Поле вибору бренду -->
+    <!-- Поле выбора бренда -->
     <AutoCompleteTextView
         android:id="@+id/brandInput"
         android:layout_width="match_parent"
@@ -13,7 +12,7 @@
         android:hint="@string/hint_brand"
         android:inputType="text"/>
 
-    <!-- Поле вибору моделі -->
+    <!-- Поле выбора модели -->
     <AutoCompleteTextView
         android:id="@+id/modelInput"
         android:layout_width="match_parent"
@@ -22,7 +21,7 @@
         android:inputType="text"
         android:layout_marginTop="8dp"/>
 
-    <!-- Вибір року від і до -->
+    <!-- Выбор года от и до -->
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -45,7 +44,7 @@
             android:prompt="@string/prompt_year_to"/>
     </LinearLayout>
 
-    <!-- Введення діапазону ціни -->
+    <!-- Ввод диапазона цены -->
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -70,12 +69,12 @@
             android:inputType="number"/>
     </LinearLayout>
 
-    <!-- Кнопка для виконання пошуку -->
+    <!-- Кнопка для выполнения поиска -->
     <Button
         android:id="@+id/matchesButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/search"
+        android:text="@string/no_matches"
         android:layout_marginTop="16dp"
-        android:enabled="false"/> <!-- Кнопка стає активною, коли є збіги -->
+        android:enabled="false"/>
 </LinearLayout>

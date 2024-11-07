@@ -8,4 +8,6 @@
     <string name="hint_price_from">Price from</string>
     <string name="hint_price_to">Price to</string>
     <string name="car_image_desc">Car image</string>
+    <string name="no_matches">No matches found</string>
+    <string name="matches_found">%1$d matches found</string>
 </resources>

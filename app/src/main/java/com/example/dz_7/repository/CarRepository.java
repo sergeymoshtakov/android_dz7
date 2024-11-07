@@ -29,6 +29,5 @@ public class CarRepository {
     private void initCarList() {
         carList.add(new Car("Toyota", "Corolla", 2010, "Well maintained", 5000, R.drawable.toyota_corolla));
         carList.add(new Car("Honda", "Civic", 2012, "Sporty model", 7000, R.drawable.honda_civic));
-        // Add other cars here as needed
     }
 }
